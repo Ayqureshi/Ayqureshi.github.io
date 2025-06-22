@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ameen Qureshi</title>
+    <script src="https://kit.fontawesome.com/30a47c33be.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --text-primary: #2d2318;
+            --text-secondary: #6b5a50;
+            --background: #f5f1ea;
+            --accent: #647C90;
+            --hover-bg: #eae3d9;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 2rem 4rem;
+            gap: 3rem;
+        }
+
+        .nav-bar a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-bar a:hover {
+            color: var(--accent);
+        }
+
+        .nav-bar .logo {
+            margin-right: auto;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .nav-bar .resume-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-bar .resume-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-bar .resume-link:hover svg {
+            transform: translateX(3px);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .intro {
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .nickname {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .quick-facts {
+            margin: 1rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .fact-item {
+            background: rgba(100, 124, 144, 0.08);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            transition: transform 0.2s;
+            border: 1px solid rgba(100, 124, 144, 0.2);
+        }
+
+        .fact-item:hover {
+            background: rgba(100, 124, 144, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .section-content {
+            color: var(--text-secondary);
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .typing-container {
+            background: rgba(100, 124, 144, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(100, 124, 144, 0.2);
+        }
+
+        .typing-text {
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin: 0;
+            min-height: 1.6em;
+            position: relative;
+        }
+
+        .typing-text::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: var(--accent);
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .language-label {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(100, 124, 144, 0.08);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            border: 1px solid rgba(100, 124, 144, 0.2);
+        }
+
+        .current-status {
+            display: inline-block;
+            background: rgba(100, 124, 144, 0.08);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            color: var(--accent);
+            font-size: 1.1rem;
+            border: 1px solid rgba(100, 124, 144, 0.2);
+        }
+
+        .social-links {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(100, 124, 144, 0.2);
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 450px;
+            height: 680px;
+            border-radius: 16px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.02);
+        }
+
+        .profile-content {
+            flex: 1;
+            max-width: 700px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .slideshow-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slideshow-image.active {
+            opacity: 1;
+        }
+
+        .slideshow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+            opacity: 0;
+        }
+
+        .slideshow-container:hover .slideshow-btn,
+        .slideshow-container:hover .slideshow-dots {
+            opacity: 1;
+        }
+
+        .slideshow-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .slideshow-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 80%;
+            padding: 5px 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+
+        .small-dots {
+            gap: 0.3rem;
+        }
+
+        .small-dots .dot {
+            width: 6px;
+            height: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot:hover {
+            transform: scale(1.2);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .interest-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .interest-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.8rem;
+            text-align: center;
+        }
+
+        .code-parallel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            background: var(--hover-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .code-parallel::before {
+            content: 'Human vs Machine';
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .code-parallel .human,
+        .code-parallel .machine {
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .code-parallel .human {
+            background: rgba(124, 58, 237, 0.05);
+            color: var(--text-primary);
+        }
+
+        .code-parallel .machine {
+            background: rgba(0, 0, 0, 0.05);
+            color: var(--accent);
+        }
+
+        .code-parallel .comment {
+            color: #888;
+            font-style: italic;
+        }
+
+        @media (max-width: 1200px) {
+            .about-container {
+                padding: 1rem;
+            }
+
+            .slideshow-container,
+            .slideshow-image,
+            .interest-image {
+                height: 350px;
+            }
+
+            .profile-image {
+                width: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 1rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .profile-image {
+                width: 280px;
+                height: 400px;
+            }
+
+            .language-map-container {
+                margin-top: 1.5rem;
+            }
+
+            .language-bubble {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+
+            .profile-content {
+                max-width: 100%;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .slideshow-container,
+            .slideshow-image,
+            .interest-image {
+                height: 300px;
+            }
+        }
+
+        .language-map-container {
+            background: rgba(100, 124, 144, 0.04);
+            padding: 1.5rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            height: 120px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid rgba(100, 124, 144, 0.15);
+        }
+
+        .language-bubble {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(100, 124, 144, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--accent);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(100, 124, 144, 0.2);
+        }
+
+        .language-bubble:hover {
+            background: rgba(100, 124, 144, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .language-bubble::after {
+            content: attr(data-name);
+            position: absolute;
+            bottom: -25px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .language-bubble::before {
+            content: attr(data-proficiency);
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .language-bubble:hover::before {
+            opacity: 1;
+            visibility: visible;
+            bottom: calc(100% + 5px);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .language-bubble {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .language-bubble:nth-child(2) { animation-delay: 0.2s; }
+        .language-bubble:nth-child(3) { animation-delay: 0.4s; }
+        .language-bubble:nth-child(4) { animation-delay: 0.6s; }
+        .language-bubble:nth-child(5) { animation-delay: 0.8s; }
+
+        .profile-quote {
+            background: rgba(100, 124, 144, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            color: var(--text-primary);
+            border-left: 3px solid var(--accent);
+            width: 420px;
+            box-sizing: border-box;
+            border: 1px solid rgba(100, 124, 144, 0.2);
+        }
+
+        .profile-quote .comment {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-quote .text {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        // Remove all translator-related styles
+        .translator-container, .translator-input, .translation-stages, .stage, .stage-label, .stage-content, .pos-tag {
+            display: none;
+        }
+
+        .academic-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .academic-content {
+            flex: 1;
+        }
+
+        .academic-image {
+            width: 400px;
+            height: 300px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            background: var(--hover-bg);
+        }
+
+        .academic-image:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .academic-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .academic-image {
+                width: 100%;
+                height: 250px;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="/">Work</a>
+        <a href="/about" class="active">About</a>
+        <a href="images/Ameen_Qureshi_Research.pdf">Resume</a>
+    </div>
+
+    <div class="about-container">
+        <div class="intro">
+            <div class="profile-section">
+                <div>
+                    <img src="images/ameezy.jpg" alt="Ameen Qureshi" class="profile-image">
+                </div>
+                <div class="profile-content">
+                    <h1 class="name">Hi there! I'm Ameen</h1>
+                    <div class="nickname">(you can call me Ameen)</div>
+                    
+                    <div class="quick-facts">
+                        <span class="fact-item">Computational Linguist</span>
+                        <span class="fact-item">NLP Enthusiast</span>
+                        <span class="fact-item">Coffee Explorer</span>
+                        <span class="fact-item">Baker</span>
+                        <span class="fact-item">Project Manager</span>
+                        <span class="fact-item">Data Scientist</span>
+                        <span class="fact-item">World Traveler</span>
+                        <span class="fact-item">Lifetime Learner</span>
+                    </div>
+
+                    <div class="section-content">
+                        <p>I love exploring the intersection of language and technology, using computational methods to understand how humans process and generate language. Through my work in Natural Language Processing and Machine Learning, I aim to create solutions that bridge communication gaps and make language technology more accessible to everyone.</p>
+                        
+                        <div class="typing-container">
+                            <div class="language-label">Language Processing</div>
+                            <p class="typing-text"></p>
+                        </div>
+
+                        <div class="current-status">
+                            Currently: Working on NLP research at USC while exploring LA's coffee scene
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Language & Technology to me</h2>
+            <div class="section-content">
+                <p>I'm passionate about tackling complex linguistic problems through computational methods. My work focuses on making language technology more intuitive and accessible, while exploring the fascinating ways humans process and understand language.</p>
+                <p>I believe in the power of combining linguistic theory with modern machine learning approaches to create more effective and human-centered language technologies.</p>
+                
+                <div class="language-map-container">
+                    <div class="language-bubble" data-name="English" data-proficiency="Native Speaker">En</div>
+                    <div class="language-bubble" data-name="Urdu" data-proficiency="Native Speaker">اردو</div>
+                    <div class="language-bubble" data-name="Hindi" data-proficiency="Conversational">हिं</div>
+                    <div class="language-bubble" data-name="ASL" data-proficiency="Learning">☜︎</div>
+                    <div class="language-bubble" data-name="Arabic" data-proficiency="Learning">ع</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Academic Journey</h2>
+            <div class="academic-section">
+                <div class="academic-content">
+                    <div class="section-content">
+                        <p>I recently graduated from USC with a unique interdisciplinary background in Computer Science and Linguistics. This combination equips me to bridge the gap between theoretical insights in linguistics and real-world applications in natural language processing.</p>
+                        <p>Working alongside talented peers and faculty, I’ve focused on building innovative solutions in areas such as syntactic analysis, semantic understanding, and language generation..</p>
+                        <p>In parallel with my work in language technologies, I’ve cultivated a strong foundation in data science—focusing on machine learning, user experience (UX) research, and the design of scalable systems. My projects have explored how data-driven insights can inform human-centered design, from evaluating user behavior to optimizing model performance in real-time environments. I’ve also leveraged distributed systems like Apache Spark and Hadoop to process large-scale datasets efficiently, enabling deeper analysis and rapid iteration for both experimental research and production-level deployment. </p>
+
+
+                    </div>
+                </div>
+                <img src="images/IMG_2442.JPG" alt="Academic journey at USC" class="academic-image">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">What brings me joy</h2>
+            <div class="section-content">
+                <p>When I'm not immersed in code or linguistic patterns, you'll find me:</p>
+                <p>• Hiking the trails of Southern California<br>
+                   • Testing new recipes in my kitchen for @ameenbakes<br>
+                   • Exploring LA's diverse coffee scene<br>
+                   • Translating and analyzing Urdu poetry<br>
+                   • Working on projects that blend language and tech</p>
+            </div>
+            <div class="image-grid">
+                <div>
+                    <img src="images/BeFunky-collage.jpg" alt="Hiking adventures collage" class="interest-image">
+                    <!-- <div class="image-caption">Weekend adventures</div> -->
+                </div>
+                <div class="slideshow-container" id="baking-slideshow">
+                    <img src="images/Ameen_Bakes/IMG_0366.JPG" alt="Baking creation 1" class="slideshow-image active">
+                    <img src="images/Ameen_Bakes/IMG_0569.JPG" alt="Baking creation 2" class="slideshow-image">
+                    <img src="images/Ameen_Bakes/IMG_2822.JPG" alt="Baking creation 3" class="slideshow-image">
+                    <img src="images/Ameen_Bakes/IMG_1710.JPG" alt="Baking creation 4" class="slideshow-image">
+                    <button class="slideshow-btn prev-btn" onclick="changeSlide(-1, 'baking')">&#10094;</button>
+                    <button class="slideshow-btn next-btn" onclick="changeSlide(1, 'baking')">&#10095;</button>
+                    <div class="slideshow-dots">
+                        <span class="dot active" onclick="setSlide(0, 'baking')"></span>
+                        <span class="dot" onclick="setSlide(1, 'baking')"></span>
+                        <span class="dot" onclick="setSlide(2, 'baking')"></span>
+                        <span class="dot" onclick="setSlide(3, 'baking')"></span>
+                    </div>
+                    <!-- <div class="image-caption">Latest bakes</div> -->
+                </div>
+                <div class="slideshow-container" id="coffee-slideshow">
+                    <img src="images/Coffee/IMG_7768.JPG" alt="Coffee exploration 1" class="slideshow-image active">
+                    <img src="images/Coffee/IMG_2811.JPG" alt="Coffee exploration 2" class="slideshow-image">
+                    <img src="images/Coffee/IMG_2978.JPG" alt="Coffee exploration 3" class="slideshow-image">
+                    <img src="images/Coffee/IMG_3124.JPG" alt="Coffee exploration 4" class="slideshow-image">
+                    <img src="images/Coffee/IMG_2778.JPG" alt="Coffee exploration 5" class="slideshow-image">
+                    <img src="images/Coffee/IMG_2640.JPG" alt="Coffee exploration 6" class="slideshow-image">
+                    <img src="images/Coffee/IMG_1844.JPG" alt="Coffee exploration 7" class="slideshow-image">
+                    <img src="images/Coffee/IMG_8481.JPG" alt="Coffee exploration 8" class="slideshow-image">
+                    <img src="images/Coffee/IMG_8652.JPG" alt="Coffee exploration 9" class="slideshow-image">
+                    <img src="images/Coffee/IMG_1834.JPG" alt="Coffee exploration 10" class="slideshow-image">
+                    <button class="slideshow-btn prev-btn" onclick="changeSlide(-1, 'coffee')">&#10094;</button>
+                    <button class="slideshow-btn next-btn" onclick="changeSlide(1, 'coffee')">&#10095;</button>
+                    <div class="slideshow-dots small-dots">
+                        <span class="dot active" onclick="setSlide(0, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(1, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(2, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(3, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(4, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(5, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(6, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(7, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(8, 'coffee')"></span>
+                        <span class="dot" onclick="setSlide(9, 'coffee')"></span>
+                    </div>
+                    <!-- <div class="image-caption">Coffee adventures</div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/ameen-qureshi/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Ayqureshi" target="_blank">GitHub</a>
+            <a href="https://www.instagram.com/ameenqureshi__/" target="_blank">Instagram</a>
+        </div>
+    </div>
+
+    <script>
+        // Slideshow and typing animation code only
+        const slideshows = {
+            baking: {
+                currentSlide: 0,
+                slides: document.querySelector('#baking-slideshow').querySelectorAll('.slideshow-image'),
+                dots: document.querySelector('#baking-slideshow').querySelectorAll('.dot')
+            },
+            coffee: {
+                currentSlide: 0,
+                slides: document.querySelector('#coffee-slideshow').querySelectorAll('.slideshow-image'),
+                dots: document.querySelector('#coffee-slideshow').querySelectorAll('.dot')
+            }
+        };
+
+        function showSlide(n, type) {
+            const slideshow = slideshows[type];
+            slideshow.slides.forEach(slide => slide.classList.remove('active'));
+            slideshow.dots.forEach(dot => dot.classList.remove('active'));
+            slideshow.currentSlide = (n + slideshow.slides.length) % slideshow.slides.length;
+            slideshow.slides[slideshow.currentSlide].classList.add('active');
+            slideshow.dots[slideshow.currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction, type) {
+            const slideshow = slideshows[type];
+            showSlide(slideshow.currentSlide + direction, type);
+        }
+
+        function setSlide(n, type) {
+            showSlide(n, type);
+        }
+
+        // Auto advance slides
+        setInterval(() => changeSlide(1, 'baking'), 50000);
+        setInterval(() => changeSlide(1, 'coffee'), 50000);
+
+        // Typing animation
+        // const phrases = [
+        //     { text: "Hello! How are you? → NLP → ¡Hola! ¿Cómo estás?", lang: "English → Spanish" },
+        //     { text: "I love linguistics → NLP → मैं भाषाविज्ञान से प्यार करता हूं", lang: "English → Hindi" },
+        //     { text: "Language is beautiful → NLP → زبان خوبصورت ہے", lang: "English → Urdu" },
+        //     { text: "Computational Linguistics → NLP → 計算言語学", lang: "English → Japanese" },
+        //     { text: "Natural Language Processing → NLP → 自然语言処理", lang: "English → Chinese" }
+        // ];
+        const phrases = [
+    {
+        text: "Hello! How are you? → ¡Hola! ¿Cómo estás? → /ˈola ˈkomo esˈtas/",
+        lang: "English → Spanish"
+    },
+    {
+        text: "I love linguistics → मैं भाषाविज्ञान से प्यार करता हूं → /mɛ̃ː bʱaːʂaːʋiɡjaːn seː pjaːɾ kəɾtaː hũː/",
+        lang: "English → Hindi"
+    },
+    {
+        text: "Language is beautiful → زبان خوبصورت ہے → /zəˈbɑːn xuːbˈsuːɾət hɛː/",
+        lang: "English → Urdu"
+    },
+    {
+        text: "Computational Linguistics → 計算言語学 → /keː.saɴ ɡeɴ.ɡo.ɡa.ku̥/",
+        lang: "English → Japanese"
+    },
+    {
+        text: "Natural Language Processing → 自然语言处理 → /ʈʂʐ̩̌n y̌ɤŋ ʈʂʰû lî/",
+        lang: "English → Mandarin Chinese"
+    }
+];
+
+
+
+        let currentPhraseIndex = 0;
+        const typingText = document.querySelector('.typing-text');
+        const languageLabel = document.querySelector('.language-label');
+        
+        async function typePhrase(phrase) {
+            const chars = phrase.split('');
+            typingText.textContent = '';
+            languageLabel.textContent = phrases[currentPhraseIndex].lang;
+            
+            for (let char of chars) {
+                typingText.textContent += char;
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+            
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            for (let i = phrase.length; i >= 0; i--) {
+                typingText.textContent = phrase.substring(0, i);
+                await new Promise(resolve => setTimeout(resolve, 30));
+            }
+        }
+
+        async function animateTyping() {
+            while (true) {
+                await typePhrase(phrases[currentPhraseIndex].text);
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            }
+        }
+
+        animateTyping();
+    </script>
+</body>
+</html> 
